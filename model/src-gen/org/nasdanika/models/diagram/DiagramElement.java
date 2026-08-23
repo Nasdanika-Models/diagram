@@ -3,8 +3,11 @@
 package org.nasdanika.models.diagram;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.nasdanika.models.nxcore.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.nasdanika.models.diagram.DiagramPackage#getDiagramElement()
- * @model abstract="true" superTypes="org.eclipse.emf.ecore.EJavaObject"
+ * @model abstract="true"
  * @generated
  */
-public interface DiagramElement extends EObject {
+public interface DiagramElement extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Tags</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
@@ -43,20 +46,21 @@ public interface DiagramElement extends EObject {
 	EList<String> getTags();
 
 	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link java.lang.Object}.
+	 * Returns the value of the '<em><b>Properties</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link java.lang.String},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Generic string properties — carrier for annotations/semantic mappings
 	 * (same composability technique as the Nasdanika Markdown model).
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Properties</em>' containment reference list.
+	 * @return the value of the '<em>Properties</em>' map.
 	 * @see org.nasdanika.models.diagram.DiagramPackage#getDiagramElement_Properties()
-	 * @model type="org.eclipse.emf.ecore.EJavaObject" containment="true"
+	 * @model mapType="org.nasdanika.models.nxcore.StringToStringMapEntry&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
 	 * @generated
 	 */
-	EList<Object> getProperties();
+	EMap<String, String> getProperties();
 
 	/**
 	 * Returns the value of the '<em><b>Semantic Elements</b></em>' reference list.

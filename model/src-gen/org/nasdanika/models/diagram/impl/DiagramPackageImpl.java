@@ -23,6 +23,8 @@ import org.nasdanika.models.diagram.Node;
 import org.nasdanika.models.diagram.Point;
 import org.nasdanika.models.diagram.Port;
 
+import org.nasdanika.models.nxcore.NxcorePackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -148,6 +150,7 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage {
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
+		NxcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDiagramPackage.createPackageContents();
@@ -569,6 +572,7 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage {
 
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		NxcorePackage theNxcorePackage = (NxcorePackage)EPackage.Registry.INSTANCE.getEPackage(NxcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -576,7 +580,7 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage {
 
 		// Add supertypes to classes
 		boundsEClass.getESuperTypes().add(this.getPoint());
-		diagramElementEClass.getESuperTypes().add(ecorePackage.getEObject());
+		diagramElementEClass.getESuperTypes().add(theNxcorePackage.getNamedElement());
 		diagramEClass.getESuperTypes().add(this.getDiagramElement());
 		layerEClass.getESuperTypes().add(this.getDiagramElement());
 		connectableEClass.getESuperTypes().add(this.getDiagramElement());
@@ -596,7 +600,7 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage {
 
 		initEClass(diagramElementEClass, DiagramElement.class, "DiagramElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDiagramElement_Tags(), theEcorePackage.getEString(), "tags", null, 0, -1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiagramElement_Properties(), ecorePackage.getEJavaObject(), null, "properties", null, 0, -1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramElement_Properties(), theNxcorePackage.getStringToStringMapEntry(), null, "properties", null, 0, -1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramElement_SemanticElements(), theEcorePackage.getEObject(), null, "semanticElements", null, 0, -1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramElement_Children(), this.getDiagramElement(), null, "children", null, 0, -1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -7,17 +7,19 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.models.diagram.DiagramElement;
 import org.nasdanika.models.diagram.DiagramPackage;
+
+import org.nasdanika.models.nxcore.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +37,7 @@ import org.nasdanika.models.diagram.DiagramPackage;
  *
  * @generated
  */
-public abstract class DiagramElementImpl extends EObjectImpl implements DiagramElement {
+public abstract class DiagramElementImpl extends NamedElementImpl implements DiagramElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,16 +62,6 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<String> getTags() {
@@ -83,8 +75,8 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Object> getProperties() {
-		return (EList<Object>)eDynamicGet(DiagramPackage.DIAGRAM_ELEMENT__PROPERTIES, DiagramPackage.Literals.DIAGRAM_ELEMENT__PROPERTIES, true, true);
+	public EMap<String, String> getProperties() {
+		return (EMap<String, String>)eDynamicGet(DiagramPackage.DIAGRAM_ELEMENT__PROPERTIES, DiagramPackage.Literals.DIAGRAM_ELEMENT__PROPERTIES, true, true);
 	}
 
 	/**
@@ -136,7 +128,8 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 			case DiagramPackage.DIAGRAM_ELEMENT__TAGS:
 				return getTags();
 			case DiagramPackage.DIAGRAM_ELEMENT__PROPERTIES:
-				return getProperties();
+				if (coreType) return getProperties();
+				else return getProperties().map();
 			case DiagramPackage.DIAGRAM_ELEMENT__SEMANTIC_ELEMENTS:
 				return getSemanticElements();
 			case DiagramPackage.DIAGRAM_ELEMENT__CHILDREN:
@@ -159,8 +152,7 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 				getTags().addAll((Collection<? extends String>)newValue);
 				return;
 			case DiagramPackage.DIAGRAM_ELEMENT__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Object>)newValue);
+				((EStructuralFeature.Setting)getProperties()).set(newValue);
 				return;
 			case DiagramPackage.DIAGRAM_ELEMENT__SEMANTIC_ELEMENTS:
 				getSemanticElements().clear();

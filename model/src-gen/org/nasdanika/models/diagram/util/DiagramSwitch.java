@@ -9,6 +9,13 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.models.diagram.*;
 
+import org.nasdanika.models.nxcore.Documented;
+import org.nasdanika.models.nxcore.Marked;
+import org.nasdanika.models.nxcore.ModelElement;
+import org.nasdanika.models.nxcore.NamedElement;
+import org.nasdanika.models.nxcore.Referrable;
+import org.nasdanika.models.nxcore.StringIdentity;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -82,6 +89,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 			case DiagramPackage.DIAGRAM_ELEMENT: {
 				DiagramElement diagramElement = (DiagramElement)theEObject;
 				T result = caseDiagramElement(diagramElement);
+				if (result == null) result = caseNamedElement(diagramElement);
+				if (result == null) result = caseModelElement(diagramElement);
+				if (result == null) result = caseStringIdentity(diagramElement);
+				if (result == null) result = caseDocumented(diagramElement);
+				if (result == null) result = caseMarked(diagramElement);
+				if (result == null) result = caseReferrable(diagramElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -89,6 +102,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				Diagram diagram = (Diagram)theEObject;
 				T result = caseDiagram(diagram);
 				if (result == null) result = caseDiagramElement(diagram);
+				if (result == null) result = caseNamedElement(diagram);
+				if (result == null) result = caseModelElement(diagram);
+				if (result == null) result = caseStringIdentity(diagram);
+				if (result == null) result = caseDocumented(diagram);
+				if (result == null) result = caseMarked(diagram);
+				if (result == null) result = caseReferrable(diagram);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,6 +115,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				Layer layer = (Layer)theEObject;
 				T result = caseLayer(layer);
 				if (result == null) result = caseDiagramElement(layer);
+				if (result == null) result = caseNamedElement(layer);
+				if (result == null) result = caseModelElement(layer);
+				if (result == null) result = caseStringIdentity(layer);
+				if (result == null) result = caseDocumented(layer);
+				if (result == null) result = caseMarked(layer);
+				if (result == null) result = caseReferrable(layer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -103,6 +128,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				Connectable connectable = (Connectable)theEObject;
 				T result = caseConnectable(connectable);
 				if (result == null) result = caseDiagramElement(connectable);
+				if (result == null) result = caseNamedElement(connectable);
+				if (result == null) result = caseModelElement(connectable);
+				if (result == null) result = caseStringIdentity(connectable);
+				if (result == null) result = caseDocumented(connectable);
+				if (result == null) result = caseMarked(connectable);
+				if (result == null) result = caseReferrable(connectable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -111,6 +142,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				T result = caseNode(node);
 				if (result == null) result = caseConnectable(node);
 				if (result == null) result = caseDiagramElement(node);
+				if (result == null) result = caseNamedElement(node);
+				if (result == null) result = caseModelElement(node);
+				if (result == null) result = caseStringIdentity(node);
+				if (result == null) result = caseDocumented(node);
+				if (result == null) result = caseMarked(node);
+				if (result == null) result = caseReferrable(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,6 +156,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				T result = casePort(port);
 				if (result == null) result = caseConnectable(port);
 				if (result == null) result = caseDiagramElement(port);
+				if (result == null) result = caseNamedElement(port);
+				if (result == null) result = caseModelElement(port);
+				if (result == null) result = caseStringIdentity(port);
+				if (result == null) result = caseDocumented(port);
+				if (result == null) result = caseMarked(port);
+				if (result == null) result = caseReferrable(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,6 +169,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				Connection connection = (Connection)theEObject;
 				T result = caseConnection(connection);
 				if (result == null) result = caseDiagramElement(connection);
+				if (result == null) result = caseNamedElement(connection);
+				if (result == null) result = caseModelElement(connection);
+				if (result == null) result = caseStringIdentity(connection);
+				if (result == null) result = caseDocumented(connection);
+				if (result == null) result = caseMarked(connection);
+				if (result == null) result = caseReferrable(connection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +184,12 @@ public class DiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNode(label);
 				if (result == null) result = caseConnectable(label);
 				if (result == null) result = caseDiagramElement(label);
+				if (result == null) result = caseNamedElement(label);
+				if (result == null) result = caseModelElement(label);
+				if (result == null) result = caseStringIdentity(label);
+				if (result == null) result = caseDocumented(label);
+				if (result == null) result = caseMarked(label);
+				if (result == null) result = caseReferrable(label);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,6 +344,96 @@ public class DiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLabel(Label object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Referrable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Referrable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReferrable(Referrable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Identity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Identity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringIdentity(StringIdentity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Documented</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Documented</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocumented(Documented object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Marked</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Marked</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMarked(Marked object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(ModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
