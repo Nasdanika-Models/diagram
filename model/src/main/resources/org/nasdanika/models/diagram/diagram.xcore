@@ -1,0 +1,83 @@
+@Ecore(nsURI="https://diagram.models.nasdanika.org", nsPrefix="org.nasdanika.models.diagram")
+@GenModel(
+    featureDelegation="Dynamic",
+    complianceLevel="21.0",
+    suppressGenModelAnnotations="false",
+    copyrightFields="false",
+    operationReflection="true",
+    importOrganizing="true"
+)
+package org.nasdanika.models.diagram
+
+import org.eclipse.emf.ecore.EObject
+import org.nasdanika.models.nxcore.NamedElement
+import org.nasdanika.models.nxcore.StringToStringMapEntry
+
+annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
+annotation "urn:org.nasdanika" as Nasdanika
+
+/* ---- Geometry (OMG DC-inspired) ---- */
+
+class Point {
+    double x
+    double y
+}
+
+class Bounds extends Point {
+    double width
+    double height
+}
+
+/* ---- Core ---- */
+
+abstract class DiagramElement extends NamedElement {
+    String[] tags
+    /*
+     * Generic string properties — carrier for annotations/semantic mappings
+     * (same composability technique as the Nasdanika Markdown model).
+     */
+    contains StringToStringMapEntry[] properties
+    /* Reference to the semantic model element this notation element depicts (OMG DI "modelElement"). */
+    refers EObject modelElement
+
+    contains DiagramElement[] children keys ^id
+}
+
+class Diagram extends DiagramElement {
+
+}
+
+class Layer extends DiagramElement {
+    boolean visible = "true"
+    boolean locked
+}
+
+/* A positioned element: shape on a slide/page. */
+class Node extends DiagramElement {
+    contains Bounds bounds
+    contains Port[] ports keys ^id
+    refers Connection[] incomingConnections keys ^id opposite target
+    refers Connection[] outgoingConnections keys ^id opposite source
+}
+
+/* Connection attachment point on a node (pragmatic extension over OMG DD). */
+class Port extends DiagramElement {
+    /* Relative position on the owner, 0..1 in each dimension. */
+    contains Point location
+    refers Connection[] incomingConnections keys ^id opposite targetPort
+    refers Connection[] outgoingConnections keys ^id opposite sourcePort
+}
+
+class Connection extends DiagramElement {
+    refers Node source opposite outgoingConnections
+    refers Node target opposite incomingConnections
+    refers Port sourcePort opposite outgoingConnections
+    refers Port targetPort opposite incomingConnections
+    contains Point[] waypoints
+}
+
+class Label extends Node {
+    String text
+}
+
