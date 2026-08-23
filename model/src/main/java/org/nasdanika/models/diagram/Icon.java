@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 
 public enum Icon {
 	
-    DOCUMENT(DiagramPackage.Literals.DOCUMENT, "diagram.svg");
+    DIAGRAM(DiagramPackage.Literals.DIAGRAM, "diagram.svg");
 
     private static final String BASE_URL = "https://diagram.models.nasdanika.org/images/";
 
