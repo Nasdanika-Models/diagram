@@ -850,31 +850,13 @@ public interface DiagramPackage extends EPackage {
 	int CONNECTABLE__INCOMING_CONNECTIONS = DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connection</b></em>' attribute.
+	 * The feature id for the '<em><b>Outgoing Connections</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTABLE__CONNECTION = DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTABLE__ID = DIAGRAM_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b></b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTABLE__ = DIAGRAM_ELEMENT_FEATURE_COUNT + 3;
+	int CONNECTABLE__OUTGOING_CONNECTIONS = DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Connectable</em>' class.
@@ -883,7 +865,7 @@ public interface DiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTABLE_FEATURE_COUNT = DIAGRAM_ELEMENT_FEATURE_COUNT + 4;
+	int CONNECTABLE_FEATURE_COUNT = DIAGRAM_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Collect</em>' operation.
@@ -1058,31 +1040,13 @@ public interface DiagramPackage extends EPackage {
 	int NODE__INCOMING_CONNECTIONS = CONNECTABLE__INCOMING_CONNECTIONS;
 
 	/**
-	 * The feature id for the '<em><b>Connection</b></em>' attribute.
+	 * The feature id for the '<em><b>Outgoing Connections</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__CONNECTION = CONNECTABLE__CONNECTION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__ID = CONNECTABLE__ID;
-
-	/**
-	 * The feature id for the '<em><b></b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__ = CONNECTABLE__;
+	int NODE__OUTGOING_CONNECTIONS = CONNECTABLE__OUTGOING_CONNECTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
@@ -1284,31 +1248,13 @@ public interface DiagramPackage extends EPackage {
 	int PORT__INCOMING_CONNECTIONS = CONNECTABLE__INCOMING_CONNECTIONS;
 
 	/**
-	 * The feature id for the '<em><b>Connection</b></em>' attribute.
+	 * The feature id for the '<em><b>Outgoing Connections</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CONNECTION = CONNECTABLE__CONNECTION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__ID = CONNECTABLE__ID;
-
-	/**
-	 * The feature id for the '<em><b></b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__ = CONNECTABLE__;
+	int PORT__OUTGOING_CONNECTIONS = CONNECTABLE__OUTGOING_CONNECTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' containment reference.
@@ -1700,31 +1646,13 @@ public interface DiagramPackage extends EPackage {
 	int LABEL__INCOMING_CONNECTIONS = NODE__INCOMING_CONNECTIONS;
 
 	/**
-	 * The feature id for the '<em><b>Connection</b></em>' attribute.
+	 * The feature id for the '<em><b>Outgoing Connections</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL__CONNECTION = NODE__CONNECTION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL__ID = NODE__ID;
-
-	/**
-	 * The feature id for the '<em><b></b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL__ = NODE__;
+	int LABEL__OUTGOING_CONNECTIONS = NODE__OUTGOING_CONNECTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
@@ -1972,37 +1900,15 @@ public interface DiagramPackage extends EPackage {
 	EReference getConnectable_IncomingConnections();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.diagram.Connectable#getConnection <em>Connection</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.diagram.Connectable#getOutgoingConnections <em>Outgoing Connections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Connection</em>'.
-	 * @see org.nasdanika.models.diagram.Connectable#getConnection()
+	 * @return the meta object for the reference list '<em>Outgoing Connections</em>'.
+	 * @see org.nasdanika.models.diagram.Connectable#getOutgoingConnections()
 	 * @see #getConnectable()
 	 * @generated
 	 */
-	EAttribute getConnectable_Connection();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.diagram.Connectable#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.nasdanika.models.diagram.Connectable#getId()
-	 * @see #getConnectable()
-	 * @generated
-	 */
-	EAttribute getConnectable_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.diagram.Connectable#get_ <em></em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em></em>'.
-	 * @see org.nasdanika.models.diagram.Connectable#get_()
-	 * @see #getConnectable()
-	 * @generated
-	 */
-	EAttribute getConnectable__();
+	EReference getConnectable_OutgoingConnections();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.diagram.Node <em>Node</em>}'.
@@ -2293,28 +2199,12 @@ public interface DiagramPackage extends EPackage {
 		EReference CONNECTABLE__INCOMING_CONNECTIONS = eINSTANCE.getConnectable_IncomingConnections();
 
 		/**
-		 * The meta object literal for the '<em><b>Connection</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Outgoing Connections</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONNECTABLE__CONNECTION = eINSTANCE.getConnectable_Connection();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONNECTABLE__ID = eINSTANCE.getConnectable_Id();
-
-		/**
-		 * The meta object literal for the '<em><b></b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONNECTABLE__ = eINSTANCE.getConnectable__();
+		EReference CONNECTABLE__OUTGOING_CONNECTIONS = eINSTANCE.getConnectable_OutgoingConnections();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.diagram.impl.NodeImpl <em>Node</em>}' class.

@@ -19,9 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.diagram.Connectable#getIncomingConnections <em>Incoming Connections</em>}</li>
- *   <li>{@link org.nasdanika.models.diagram.Connectable#getConnection <em>Connection</em>}</li>
- *   <li>{@link org.nasdanika.models.diagram.Connectable#getId <em>Id</em>}</li>
- *   <li>{@link org.nasdanika.models.diagram.Connectable#get_ <em></em>}</li>
+ *   <li>{@link org.nasdanika.models.diagram.Connectable#getOutgoingConnections <em>Outgoing Connections</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.diagram.DiagramPackage#getConnectable()
@@ -32,79 +30,29 @@ public interface Connectable extends DiagramElement {
 	/**
 	 * Returns the value of the '<em><b>Incoming Connections</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.models.diagram.Connection}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.diagram.Connection#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Connections</em>' reference list.
 	 * @see org.nasdanika.models.diagram.DiagramPackage#getConnectable_IncomingConnections()
-	 * @model
+	 * @see org.nasdanika.models.diagram.Connection#getTarget
+	 * @model opposite="target"
 	 * @generated
 	 */
 	EList<Connection> getIncomingConnections();
 
 	/**
-	 * Returns the value of the '<em><b>Connection</b></em>' attribute.
+	 * Returns the value of the '<em><b>Outgoing Connections</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.models.diagram.Connection}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.diagram.Connection#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connection</em>' attribute.
-	 * @see #setConnection(Object)
-	 * @see org.nasdanika.models.diagram.DiagramPackage#getConnectable_Connection()
-	 * @model unique="false"
+	 * @return the value of the '<em>Outgoing Connections</em>' reference list.
+	 * @see org.nasdanika.models.diagram.DiagramPackage#getConnectable_OutgoingConnections()
+	 * @see org.nasdanika.models.diagram.Connection#getSource
+	 * @model opposite="source"
 	 * @generated
 	 */
-	Object getConnection();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.models.diagram.Connectable#getConnection <em>Connection</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connection</em>' attribute.
-	 * @see #getConnection()
-	 * @generated
-	 */
-	void setConnection(Object value);
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(Object)
-	 * @see org.nasdanika.models.diagram.DiagramPackage#getConnectable_Id()
-	 * @model unique="false"
-	 * @generated
-	 */
-	Object getId();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.models.diagram.Connectable#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(Object value);
-
-	/**
-	 * Returns the value of the '<em><b></b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em></em>' attribute.
-	 * @see #set_(Object)
-	 * @see org.nasdanika.models.diagram.DiagramPackage#getConnectable__()
-	 * @model unique="false"
-	 * @generated
-	 */
-	Object get_();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.models.diagram.Connectable#get_ <em></em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em></em>' attribute.
-	 * @see #get_()
-	 * @generated
-	 */
-	void set_(Object value);
+	EList<Connection> getOutgoingConnections();
 
 } // Connectable

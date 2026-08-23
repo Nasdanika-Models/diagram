@@ -71,8 +71,8 @@ class Layer extends DiagramElement {
  */
 abstract class Connectable extends DiagramElement {
 
-    refers Connection[] incomingConnections keys ^id opposite target
-    refers Connection[] outgoingConnections keys ^id opposite source
+    refers Connection[] incomingConnections opposite target 
+    refers Connection[] outgoingConnections opposite source 
 
 }
 

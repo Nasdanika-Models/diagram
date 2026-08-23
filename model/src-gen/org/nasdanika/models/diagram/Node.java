@@ -55,7 +55,7 @@ public interface Node extends Connectable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see org.nasdanika.models.diagram.DiagramPackage#getNode_Ports()
-	 * @model containment="true" keys="id"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Port> getPorts();

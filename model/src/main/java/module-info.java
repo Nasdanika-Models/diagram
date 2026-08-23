@@ -6,7 +6,6 @@ module org.nasdanika.models.diagram {
 	exports org.nasdanika.models.diagram;
 	exports org.nasdanika.models.diagram.impl;
 	exports org.nasdanika.models.diagram.util;
-	exports org.nasdanika.models.diagram.loader;
 	
 	requires transitive org.eclipse.emf.ecore;
 	requires transitive org.eclipse.emf.common;

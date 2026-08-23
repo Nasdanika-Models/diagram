@@ -77,6 +77,16 @@ public class ConnectionImpl extends DiagramElementImpl implements Connection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NotificationChain basicSetSource(Connectable newSource, NotificationChain msgs) {
+		msgs = eDynamicInverseAdd((InternalEObject)newSource, DiagramPackage.CONNECTION__SOURCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public void setSource(Connectable newSource) {
 		eDynamicSet(DiagramPackage.CONNECTION__SOURCE, DiagramPackage.Literals.CONNECTION__SOURCE, newSource);
@@ -140,6 +150,11 @@ public class ConnectionImpl extends DiagramElementImpl implements Connection {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DiagramPackage.CONNECTION__SOURCE:
+				Connectable source = basicGetSource();
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, DiagramPackage.CONNECTABLE__OUTGOING_CONNECTIONS, Connectable.class, msgs);
+				return basicSetSource((Connectable)otherEnd, msgs);
 			case DiagramPackage.CONNECTION__TARGET:
 				Connectable target = basicGetTarget();
 				if (target != null)
@@ -157,6 +172,8 @@ public class ConnectionImpl extends DiagramElementImpl implements Connection {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DiagramPackage.CONNECTION__SOURCE:
+				return basicSetSource(null, msgs);
 			case DiagramPackage.CONNECTION__TARGET:
 				return basicSetTarget(null, msgs);
 			case DiagramPackage.CONNECTION__WAYPOINTS:

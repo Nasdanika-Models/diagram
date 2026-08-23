@@ -25,12 +25,14 @@ import org.eclipse.emf.common.util.EList;
 public interface Connection extends DiagramElement {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.diagram.Connectable#getOutgoingConnections <em>Outgoing Connections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Connectable)
 	 * @see org.nasdanika.models.diagram.DiagramPackage#getConnection_Source()
-	 * @model
+	 * @see org.nasdanika.models.diagram.Connectable#getOutgoingConnections
+	 * @model opposite="outgoingConnections"
 	 * @generated
 	 */
 	Connectable getSource();
