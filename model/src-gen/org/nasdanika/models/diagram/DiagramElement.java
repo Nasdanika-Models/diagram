@@ -22,7 +22,6 @@ import org.nasdanika.models.nxcore.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.diagram.DiagramElement#getTags <em>Tags</em>}</li>
  *   <li>{@link org.nasdanika.models.diagram.DiagramElement#getProperties <em>Properties</em>}</li>
  *   <li>{@link org.nasdanika.models.diagram.DiagramElement#getSemanticElements <em>Semantic Elements</em>}</li>
  *   <li>{@link org.nasdanika.models.diagram.DiagramElement#getChildren <em>Children</em>}</li>
@@ -33,18 +32,6 @@ import org.nasdanika.models.nxcore.NamedElement;
  * @generated
  */
 public interface DiagramElement extends NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Tags</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tags</em>' attribute list.
-	 * @see org.nasdanika.models.diagram.DiagramPackage#getDiagramElement_Tags()
-	 * @model unique="false"
-	 * @generated
-	 */
-	EList<String> getTags();
-
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' map.
 	 * The key is of type {@link java.lang.String},

@@ -271,22 +271,13 @@ public interface DiagramPackage extends EPackage {
 	int DIAGRAM_ELEMENT__NAME = NxcorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGRAM_ELEMENT__TAGS = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_ELEMENT__PROPERTIES = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int DIAGRAM_ELEMENT__PROPERTIES = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Elements</b></em>' reference list.
@@ -295,7 +286,7 @@ public interface DiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_ELEMENT__SEMANTIC_ELEMENTS = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int DIAGRAM_ELEMENT__SEMANTIC_ELEMENTS = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -304,7 +295,7 @@ public interface DiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_ELEMENT__CHILDREN = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int DIAGRAM_ELEMENT__CHILDREN = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -313,7 +304,7 @@ public interface DiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_ELEMENT_FEATURE_COUNT = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int DIAGRAM_ELEMENT_FEATURE_COUNT = NxcorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Collect</em>' operation.
@@ -441,15 +432,6 @@ public interface DiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIAGRAM__NAME = DIAGRAM_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGRAM__TAGS = DIAGRAM_ELEMENT__TAGS;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
@@ -613,15 +595,6 @@ public interface DiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int LAYER__NAME = DIAGRAM_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LAYER__TAGS = DIAGRAM_ELEMENT__TAGS;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
@@ -805,15 +778,6 @@ public interface DiagramPackage extends EPackage {
 	int CONNECTABLE__NAME = DIAGRAM_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTABLE__TAGS = DIAGRAM_ELEMENT__TAGS;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,15 +957,6 @@ public interface DiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int NODE__NAME = CONNECTABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__TAGS = CONNECTABLE__TAGS;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
@@ -1203,15 +1158,6 @@ public interface DiagramPackage extends EPackage {
 	int PORT__NAME = CONNECTABLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__TAGS = CONNECTABLE__TAGS;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1400,15 +1346,6 @@ public interface DiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTION__NAME = DIAGRAM_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION__TAGS = DIAGRAM_ELEMENT__TAGS;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
@@ -1601,15 +1538,6 @@ public interface DiagramPackage extends EPackage {
 	int LABEL__NAME = NODE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL__TAGS = NODE__TAGS;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1791,17 +1719,6 @@ public interface DiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDiagramElement();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.nasdanika.models.diagram.DiagramElement#getTags <em>Tags</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Tags</em>'.
-	 * @see org.nasdanika.models.diagram.DiagramElement#getTags()
-	 * @see #getDiagramElement()
-	 * @generated
-	 */
-	EAttribute getDiagramElement_Tags();
 
 	/**
 	 * Returns the meta object for the map '{@link org.nasdanika.models.diagram.DiagramElement#getProperties <em>Properties</em>}'.
@@ -2111,14 +2028,6 @@ public interface DiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DIAGRAM_ELEMENT = eINSTANCE.getDiagramElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Tags</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DIAGRAM_ELEMENT__TAGS = eINSTANCE.getDiagramElement_Tags();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' map feature.

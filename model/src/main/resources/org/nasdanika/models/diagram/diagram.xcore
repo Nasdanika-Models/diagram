@@ -32,7 +32,7 @@ class Bounds extends Point {
 /* ---- Core ---- */
 
 abstract class DiagramElement extends NamedElement { // TODO - to Requirements.Satisfier
-    String[] tags
+
     /*
      * Generic string properties — carrier for annotations/semantic mappings
      * (same composability technique as the Nasdanika Markdown model).
